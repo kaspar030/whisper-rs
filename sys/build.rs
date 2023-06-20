@@ -111,6 +111,11 @@ fn main() {
     #[cfg(feature = "opencl")]
     cmd.arg("-DWHISPER_CLBLAST=ON");
 
+    #[cfg(feature = "openblas")]
+    {
+        cmd.arg("-DWHISPER_OPENBLAS=ON");
+    }
+
     cmd.arg("-DCMAKE_POSITION_INDEPENDENT_CODE=ON");
 
     let code = cmd
