@@ -114,6 +114,7 @@ fn main() {
     #[cfg(feature = "openblas")]
     {
         cmd.arg("-DWHISPER_OPENBLAS=ON");
+        println!("cargo:rustc-link-lib=cublas");
     }
 
     cmd.arg("-DCMAKE_POSITION_INDEPENDENT_CODE=ON");
